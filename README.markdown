@@ -13,18 +13,24 @@ Perform the following on a build box as root.
 
 ## Download Redis
 
-    cd /tmp
-    wget http://github.com/antirez/redis/tarball/v1.3.9
-    tar -xzf antirez-redis-v1.3.9-0-gd4dd655.tar.gz
-    mv antirez-redis-d495a77 redis-1.3.9
-    tar -czf redis-1.3.9.tar.gz redis-1.3.9
-    cp redis-1.3.9.tar.gz ~/rpmbuild/SOURCES/
+    cd ~/rpmbuild/SOURCES
+    wget http://redis.googlecode.com/files/redis-2.6.10.tar.gz
 
 ## Get Necessary System-specific Configs
 
-    git clone git://github.com/causes/redis-centos.git
-    cp redis-centos/conf/redis.conf ~/rpmbuild/SOURCES/
-    cp redis-centos/spec/redis.spec ~/rpmbuild/SPECS/
+    cd ~/rpmbuild/SOURCES
+    wget https://raw.github.com/wari/redis-centos/2.6.10/conf/redis.conf 
+    cd ~/rpmbuild/SPECS/
+    wget https://raw.github.com/wari/redis-centos/2.6.10/spec/redis.spec
+
+## Edit the specfile
+
+You might want to edit the spec file depending on your environment (this one is
+set to use id 498 for the redis user, for example)
+
+## Edit the configuration file
+
+Again, if necessary. You might want defaults set up to your liking.
 
 ## Build the RPM
 
@@ -33,7 +39,7 @@ Perform the following on a build box as root.
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-1.3.9-1.x86_64.rpm
+    ~/rpmbuild/RPMS/x86_64/redis-2.6.10-1.x86_64.rpm
 
 ## Credits
 
