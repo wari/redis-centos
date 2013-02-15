@@ -39,7 +39,9 @@ Again, if necessary. You might want defaults set up to your liking.
 
 The resulting RPM will be:
 
-    ~/rpmbuild/RPMS/x86_64/redis-2.6.10-1.x86_64.rpm
+    ~/rpmbuild/RPMS/${ARCH}/redis-2.6.10-1.x86_64.rpm
+    
+where ${ARCH} is your default architecture (x86_64, or i[356]86 if 32 bit)
 
 ## Credits
 
