@@ -3,7 +3,7 @@
 
 Summary: redis
 Name: redis
-Version: 2.4.6
+Version: 2.6.10
 Release: stable
 License: BSD
 Group: Applications/Multimedia
@@ -208,6 +208,9 @@ fi
 %dir %attr(0755,redis,redis) %{_localstatedir}/run/redis
 
 %changelog
+* Fri Feb 15 2013 - Wari Wahab <wari@celestix.com>
+- Updated to 2.6.10
+
 * Tue Jul 13 2010 - jay at causes dot com 2.0.0-rc2
 - upped to 2.0.0-rc2
 
