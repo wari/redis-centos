@@ -167,7 +167,7 @@ mkdir -p %{buildroot}%{_bindir}
 %{__install} -p -d -m 0755 %{buildroot}%{pid_dir}
 
 %pre
-/usr/sbin/useradd -c 'Redis' -u 499 -s /bin/false -r -d %{_localstatedir}/lib/redis redis 2> /dev/null || :
+/usr/sbin/useradd -c 'Redis' -u 498 -s /bin/false -r -d %{_localstatedir}/lib/redis redis 2> /dev/null || :
 mkdir /var/redis
 /bin/chown redis /var/redis
 
