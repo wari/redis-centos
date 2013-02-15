@@ -22,21 +22,33 @@ Provides: redis
 Packager: Jason Priebe <jpriebe@cbcnewmedia.com>
 
 %description
-Redis is a key-value database. It is similar to memcached but the dataset is
-not volatile, and values can be strings, exactly like in memcached, but also
-lists and sets with atomic operations to push/pop elements.
+Redis is an open source, BSD licensed, advanced key-value store. It is often
+referred to as a data structure server since keys can contain strings, hashes,
+lists, sets and sorted sets.
 
-In order to be very fast but at the same time persistent the whole dataset is
-taken in memory and from time to time and/or when a number of changes to the
-dataset are performed it is written asynchronously on disk. You may lose the
-last few queries that is acceptable in many applications but it is as fast
-as an in memory DB (beta 6 of Redis includes initial support for master-slave
-replication in order to solve this problem by redundancy).
+You can run atomic operations on these types, like appending to a string;
+incrementing the value in a hash; pushing to a list; computing set
+intersection, union and difference; or getting the member with highest ranking
+in a sorted set.
 
-Compression and other interesting features are a work in progress. Redis is
-written in ANSI C and works in most POSIX systems like Linux, *BSD, Mac OS X,
-and so on. Redis is free software released under the very liberal BSD license.
+In order to achieve its outstanding performance, Redis works with an in-memory
+dataset. Depending on your use case, you can persist it either by dumping the
+dataset to disk every once in a while, or by appending each command to a log.
 
+Redis also supports trivial-to-setup master-slave replication, with very fast
+non-blocking first synchronization, auto-reconnection on net split and so
+forth.
+
+Other features include Transactions, Pub/Bub, Lua scripting, Keys with a
+limited time-to-live, and configuration settings to make Redis behave like a
+cache.
+
+You can use Redis from most programming languages out there.
+
+Redis is written in ANSI C and works in most POSIX systems like Linux, *BSD, OS
+X without external dependencies. Linux and OSX are the two operating systems
+where Redis is developed and more tested, and we recommend using Linux for
+deploying.
 
 %prep
 %setup
